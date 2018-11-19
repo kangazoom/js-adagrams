@@ -100,9 +100,8 @@ const Adagrams = {
     };
 
     let score_sum = 0;
-    const special_length = [7,8,9,10];
 
-    if (special_length.includes(word.length)) {
+    if (word.length > 6) {
       score_sum += 8;
     }
 
@@ -110,7 +109,7 @@ const Adagrams = {
       let letter = word[i].toUpperCase();
       score_sum += letter_score[letter];
     }
-    
+
     return score_sum;
   },
 
