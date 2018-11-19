@@ -48,18 +48,25 @@ const Adagrams = {
   usesAvailableLetters(input, lettersInHand) {
     let hand_copy = [];
 
+    // create a deep copy of the hand
     for (let letter of lettersInHand){
       hand_copy.push(letter);
     }
 
-    if ( !hand_copy.includes(input) ) {
-      return false;
+    // loop thru input word (string
+    for (let i=0; i < input.length; i++) {
+      let letter = input[i]
+      if (!hand_copy.includes(letter)) {
+        return false
+      }
+      else {
+        // remove valid input letters from hand (copy)
+        let checked_index = hand_copy.indexOf(letter);
+        hand_copy.splice(checked_index, 1);
+      }
     }
-    else {
-      let checked_index = hand_copy.indexOf(input);
-      hand_copy.splice(checked_index, 1);
-      return true;
-    }
+    // if we made it thru without returning false, the input is valid
+    return true
   }
 
 
@@ -67,6 +74,8 @@ const Adagrams = {
 
 
 
+
+  
 };
 
 // Do not remove this line or your tests will break!
