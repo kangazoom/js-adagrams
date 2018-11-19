@@ -45,6 +45,23 @@ const Adagrams = {
     return hand
   },
 
+  usesAvailableLetters(input, lettersInHand) {
+    let hand_copy = [];
+
+    for (let letter of lettersInHand){
+      hand_copy.push(letter);
+    }
+
+    if ( !hand_copy.includes(input) ) {
+      return false;
+    }
+    else {
+      let checked_index = hand_copy.indexOf(input);
+      hand_copy.splice(checked_index, 1);
+      return true;
+    }
+  }
+
 
 
 
