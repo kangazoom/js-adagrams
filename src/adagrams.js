@@ -70,7 +70,7 @@ const Adagrams = {
   },
 
   scoreWord(word) {
-    const letter_score = {
+    const letter_scoring = {
       "A": 1,
       "B": 3,
       "C": 3,
@@ -107,11 +107,15 @@ const Adagrams = {
 
     for (let i=0; i < word.length; i++) {
       let letter = word[i].toUpperCase();
-      score_sum += letter_score[letter];
+      score_sum += letter_scoring[letter];
     }
 
     return score_sum;
   },
+
+  highestScoreFrom(words) {
+
+  }
 
 
 
