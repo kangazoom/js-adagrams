@@ -114,19 +114,33 @@ const Adagrams = {
   },
 
   highestScoreFrom(words) {
+    let winner = {
+      word: words[0],
+      // ugh tried to make this a function that calls winner.word, but it would return [Function: score]
+      score: this.scoreWord(words[0])
+    };
 
+    let reassign_winner = function reassign_winner(word, score) {
+      winner.word = word;
+      winner.score = score;
+    };
+
+    for (let word_ind in words) {
+      let word = words[word_ind];
+      let word_score = this.scoreWord(word);
+
+      if (word_score > winner.score) {
+        reassign_winner(word, word_score);
+      }
+
+      if (word_score === winner.score) {
+        if ((word.length === 10 && winner.word.length !== 10) || (word.length < winner.word.length))  {
+          reassign_winner(word, word_score);
+        }
+      }
+    }
+    return winner
   }
-
-
-
-
-
-
-
-
-
-
 };
-
 // Do not remove this line or your tests will break!
 export default Adagrams;
