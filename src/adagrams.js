@@ -137,7 +137,7 @@ const Adagrams = {
         if (word.length === 10 )  {
           reassign_winner(word, word_score);
         }
-        else if (word_score === winner.score)  {
+        else if (word.length < winner.word.length)  {
           reassign_winner(word, word_score);
         }
 
