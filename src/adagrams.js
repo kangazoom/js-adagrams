@@ -1,32 +1,32 @@
 const Adagrams = {
   drawLetters() {
     const letter_pool = [
-      ...'a'.repeat(9),
-      ...'b'.repeat(2),
-      ...'c'.repeat(2),
-      ...'d'.repeat(4),
-      ...'e'.repeat(12),
-      ...'f'.repeat(2),
-      ...'g'.repeat(3),
-      ...'h'.repeat(2),
-      ...'i'.repeat(9),
-      ...'j'.repeat(1),
-      ...'k'.repeat(1),
-      ...'l'.repeat(4),
-      ...'m'.repeat(2),
-      ...'n'.repeat(6),
-      ...'o'.repeat(8),
-      ...'p'.repeat(2),
-      ...'q'.repeat(1),
-      ...'r'.repeat(6),
-      ...'s'.repeat(4),
-      ...'t'.repeat(6),
-      ...'u'.repeat(4),
-      ...'v'.repeat(2),
-      ...'w'.repeat(2),
-      ...'x'.repeat(1),
-      ...'y'.repeat(2),
-      ...'z'.repeat(1),
+      ...'A'.repeat(9),
+      ...'B'.repeat(2),
+      ...'C'.repeat(2),
+      ...'D'.repeat(4),
+      ...'E'.repeat(12),
+      ...'F'.repeat(2),
+      ...'G'.repeat(3),
+      ...'H'.repeat(2),
+      ...'I'.repeat(9),
+      ...'J'.repeat(1),
+      ...'K'.repeat(1),
+      ...'L'.repeat(4),
+      ...'M'.repeat(2),
+      ...'N'.repeat(6),
+      ...'O'.repeat(8),
+      ...'P'.repeat(2),
+      ...'Q'.repeat(1),
+      ...'R'.repeat(6),
+      ...'S'.repeat(4),
+      ...'T'.repeat(6),
+      ...'U'.repeat(4),
+      ...'V'.repeat(2),
+      ...'W'.repeat(2),
+      ...'X'.repeat(1),
+      ...'Y'.repeat(2),
+      ...'Z'.repeat(1),
     ];
 
     let hand = [];
@@ -133,13 +133,18 @@ const Adagrams = {
         reassign_winner(word, word_score);
       }
 
-      if (word_score === winner.score) {
-        if ((word.length === 10 && winner.word.length !== 10) || (word.length < winner.word.length))  {
+      if ( (word_score === winner.score) &&  (winner.word.length !== 10)) {
+        if (word.length === 10 )  {
           reassign_winner(word, word_score);
         }
+        else if (word_score === winner.score)  {
+          reassign_winner(word, word_score);
+        }
+
+        }
       }
-    }
-    return winner
+
+    return winner;
   }
 };
 // Do not remove this line or your tests will break!
