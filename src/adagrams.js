@@ -29,20 +29,20 @@ const Adagrams = {
       ...'z'.repeat(1),
     ];
 
-    let hand_ind = [];
+    let hand = [];
 
-    while (hand_ind.length < 10) {
+    while (hand.length < 10) {
       // select a letter, randomly
       let rand_ind = Math.floor(Math.random() * letter_pool.length);
       let letter = letter_pool[rand_ind];
 
       // place letter into the hand (10x)
-      hand_ind.push(letter);
+      hand.push(letter);
 
       // remove value from the letter pool so we only select a value once
       letter_pool.splice(rand_ind, 1);
     }
-
+    return hand
   },
 
 
