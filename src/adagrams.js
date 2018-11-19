@@ -99,20 +99,22 @@ const Adagrams = {
       "Z": 10
     };
 
-    let score_sum = 0
-    const special_length = [7,8,9,10]
+    let score_sum = 0;
+    const special_length = [7,8,9,10];
 
     if (special_length.includes(word.length)) {
-      score_sum += 8
+      score_sum += 8;
     }
 
     for (let i=0; i < word.length; i++) {
-      let letter = word[i]
-      score_sum += letter_score[letter]
+      let letter = word[i].toUpperCase();
+      score_sum += letter_score[letter];
     }
+    
+    return score_sum;
+  },
 
-    return score_sum
-  }
+
 
 
 
